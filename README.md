@@ -2,7 +2,7 @@
 开源从中文分词器设计到推理优化的大语言模型全流程实验 \
 [清洗后的数据](https://huggingface.co/datasets/mdokl/WuDaoCorpora2.0-RefinedEdition60GTXT) \
 [预训练得到的模型参数](https://huggingface.co/mdokl/Jerry-v0.01-0.18B) \
-很快会有：在线体验、推理代码、训练代码、人工\自动化标注工具、广告清晰代码、词表创建与分词器代码。。。 \
+很快会有：在线体验、推理代码、训练代码、人工\自动化标注工具、广告清洗代码、词表创建与分词器代码。。。 \
 ... \
 依赖：numpy,pytorch,matplotlib,ahocorasick \
 注意：AC自动机要BYTES=1的版本！\
