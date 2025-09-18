@@ -30,5 +30,4 @@ AHOCORASICK_BYTES=1 pip install git+https://github.com/WojciechMula/pyahocorasic
 推理优化（3070 mobile）： \
 <img width="1711" height="779" alt="image" src="https://github.com/user-attachments/assets/f8ec8d15-cc47-4c1c-ae4e-9266a09246e2" />
 <img width="1067" height="599" alt="image" src="https://github.com/user-attachments/assets/3057122e-eadb-414a-bdc3-2d806cd24161" />
-现在专注于大模型使用，而非训练[狗头]
-代码会在近几周整理上传，但是数据和权重文件预计只能放在huggingface了，适时会提供链接。
+代码会在近期上传，[训练数据已经源](https://huggingface.co/datasets/mdokl/WuDaoCorpora2.0-RefinedEdition60GTXT)
