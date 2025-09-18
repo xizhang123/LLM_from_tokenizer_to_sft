@@ -20,7 +20,6 @@ AHOCORASICK_BYTES=1 pip install git+https://github.com/WojciechMula/pyahocorasic
 推理优化：EL-Attention \
 微调数据：COIG-CQIA-full \
 ...省略细节后续补充， \
-这是第二次重构，依然还有许多缺陷，但由于研究方向与大模型关系不大，不能继续研究了，开源纪念这段探索大模型原理经历。 \
 
 训练loss: \
 <img width="551" height="413" alt="image" src="https://github.com/user-attachments/assets/753726a6-8f2b-4e6f-85b2-845fa4fc4a3b" />
