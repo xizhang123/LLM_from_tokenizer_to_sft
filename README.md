@@ -27,14 +27,23 @@ AHOCORASICK_BYTES=1 pip install git+https://github.com/WojciechMula/pyahocorasic
 技巧：序列长度从128->256->512->1024变化，前期加速每后期长上下文 \
 训练性能：后期seq=1024时吞吐量17990.7 tokens/s，前期没有记录，但处理完60G数据总共用时一周。 \
 推理优化：EL-Attention \
-微调数据：COIG-CQIA-full \
+微调数据：COIG-CQIA-full（数据量不太够，这里没有整理微调相关的部分）
 
-训练loss: \
-<img width="551" height="413" alt="image" src="https://github.com/user-attachments/assets/753726a6-8f2b-4e6f-85b2-845fa4fc4a3b" />
+训练loss（每次增加片段长度，loss会有突然降低，这也证明了位置编码的长度外对能力良好）: \
+需要说明的是，在训练长度为128时，模型具有良好的文采，但后期，随着序列长度增加，就成为了普通的语言模型，因此小模型的最优训练片段长度值得探索。 \
+<img width="551" height="413" alt="image" src="https://github.com/user-attachments/assets/753726a6-8f2b-4e6f-85b2-845fa4fc4a3b" /> \
+由于中间阶段的模型权重丢失了，这里只保留两段输出结果（没及时保存算是小小的遗憾，但最终的模型还是更加稳定通用的）
+```
+一去二三里,是间隔帘的灰烟,无论槐花树下的那个寂寂的空笑,是间离不开的恋曲,或是重逢的企盼,甚至是一种悠然的心情。踏上被人们称作"小家碧玉"的石板路,一路绵延不绝地在神庙的一边
+```
+```
+相见时难别亦难,只因前世无缘却相聚,培训归来不足依依惜别。岁月如烟,刻画古今对家乡,对故乡的留恋,人世相逢却只能相拥而泣,是难以理解。 往事千山,相映成趣,相诉相随,泪流迭下,失望的无奈开始显露,感情又失败了再退缩,
+```
+
 训练学习率调整： \
-<img width="590" height="413" alt="image" src="https://github.com/user-attachments/assets/9eacd255-4d2d-4760-996e-99f1e392e355" />
+<img width="590" height="413" alt="image" src="https://github.com/user-attachments/assets/9eacd255-4d2d-4760-996e-99f1e392e355" /> \
 训练时测试（允许暂停训练随时查看效果，此时没有重复惩罚）： \
-<img width="1794" height="434" alt="image" src="https://github.com/user-attachments/assets/3397efb2-69ae-4448-89c5-e5a7a90865df" />
+<img width="1794" height="434" alt="image" src="https://github.com/user-attachments/assets/3397efb2-69ae-4448-89c5-e5a7a90865df" /> \
 推理优化（3070 mobile）： \
-<img width="1711" height="779" alt="image" src="https://github.com/user-attachments/assets/f8ec8d15-cc47-4c1c-ae4e-9266a09246e2" />
+<img width="1711" height="779" alt="image" src="https://github.com/user-attachments/assets/f8ec8d15-cc47-4c1c-ae4e-9266a09246e2" /> \
 <img width="1067" height="599" alt="image" src="https://github.com/user-attachments/assets/3057122e-eadb-414a-bdc3-2d806cd24161" />
