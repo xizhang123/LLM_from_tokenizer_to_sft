@@ -4,14 +4,17 @@
 [预训练得到的模型参数](https://huggingface.co/mdokl/Jerry-v0.01-0.18B) \
 [在线体验(modelscope)](https://modelscope.cn/studios/xizhang123/zh_0.18B_LLM) \
 [在线体验(huggingface)](https://huggingface.co/spaces/mdokl/zh_0.18B_LLM) \
-很快会有：推理代码、训练代码、人工\自动化标注工具、广告清洗代码、词表创建与分词器代码。。。 \
+每个文件夹中有对应的说明文件，其中更加详细的描述 \
+原本这个项目是想作为一个LLM入门教程，但经历有限，自身水平更加有限，最终代码趋于屎山，时间久了，关键点自身都有遗忘，因此也适合作为教程。 \
+由于想要真实的看到智能涌现，以及流程的完整，原始数据集选择了WuDaoCorpora2.0，这使得数据清洗，词表创建，模型训练的时间成本极高 \
+不算花费的人力成本（这是最主要的），租用服务器会花费400元左右 \
 ... \
 依赖：numpy,pytorch,matplotlib,ahocorasick \
 注意：AC自动机要BYTES=1的版本！\
 AHOCORASICK_BYTES=1 pip install git+https://github.com/WojciechMula/pyahocorasick.git \
 训练条件：租用单卡4090一周 \
 数据集：悟道200G公开数据集，去重筛选得到60G \
-分词器：借鉴于bytepiece，基于AC自动机与最大概率路径算法 \
+分词器：借鉴于[bytepiece](https://spaces.ac.cn/archives/9752)，基于AC自动机与最大概率路径算法 \
 词表：
 - 从n-gram片段开始，经过12轮全自动迭代得到， 
 - 65544词，包含常用词语，生僻字支持字节拆分， 
@@ -25,7 +28,6 @@ AHOCORASICK_BYTES=1 pip install git+https://github.com/WojciechMula/pyahocorasic
 训练性能：后期seq=1024时吞吐量17990.7 tokens/s，前期没有记录，但处理完60G数据总共用时一周。 \
 推理优化：EL-Attention \
 微调数据：COIG-CQIA-full \
-...省略细节后续补充， \
 
 训练loss: \
 <img width="551" height="413" alt="image" src="https://github.com/user-attachments/assets/753726a6-8f2b-4e6f-85b2-845fa4fc4a3b" />
