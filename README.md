@@ -1,20 +1,29 @@
 # 生成式语言模型全流程实验
-开源从中文分词器设计到推理优化的大语言模型全流程实验 \
+## 相关链接
 [清洗后的数据](https://huggingface.co/datasets/mdokl/WuDaoCorpora2.0-RefinedEdition60GTXT) \
 [预训练得到的模型参数](https://huggingface.co/mdokl/Jerry-v0.01-0.18B) \
 [在线体验(modelscope)](https://modelscope.cn/studios/xizhang123/zh_0.18B_LLM) \
 [在线体验(huggingface)](https://huggingface.co/spaces/mdokl/zh_0.18B_LLM) \
-每个文件夹中有对应的说明文件，其中更加详细的描述 \
-原本这个项目是想作为一个LLM入门教程，但经历有限，自身水平更加有限，最终代码趋于屎山，时间久了，关键点自身都有遗忘，因此也适合作为教程。 \
-由于想要真实的看到智能涌现，以及流程的完整，原始数据集选择了WuDaoCorpora2.0，这使得数据清洗，词表创建，模型训练的时间成本极高 \
-不算花费的人力成本（这是最主要的），租用服务器会花费400元左右 \
-... \
+每个文件夹中有对应的说明文件，其中更加详细的描述 
+## 简要介绍
+这是一个完整的LLM项目，从数据清洗和分词器设计开始，直到预训练结束。 \
+未来，在主线方面还会有强化学习以及人类对齐相关的内容。 \
+在支线方面，还会尝试优化、重构当前的模块，添加足够易读的注释和文档。 \
+在更遥远的未来，或许还会设计到CUDA编程，甚至重写深度学习框架，使项目更加完整。 \
+但在现在，项目才刚刚开始，许多模块还属于屎山代码，一切会慢慢变好的。 
+## 一些额外说明
+原始数据集选择了WuDaoCorpora2.0，数据清洗的流程还有待优化，当前清洗策略大约会花费一周才能完成。 \
+如果适应清洗后的数据，租用服务器进行预训练，会花费4090 24G 一周。 \
+训练过程使用的是单精度float32，并且暂时无法在半精度下保证不崩溃，因此这也是一个后续优化的目标。 \
+当前训练时GPU功率可以接近100%，主要瓶颈是算力而非通信，租用A100或48G魔改版4090都只会增加成本，不会提高速度。 \
+没有尝试过多卡训练。 \
+[便宜的算力平台（智星云）链接](https://www.ai-galaxy.cn/)。 
+## 特别注意
 依赖：numpy,pytorch,matplotlib,ahocorasick \
-注意：AC自动机要BYTES=1的版本！\
-AHOCORASICK_BYTES=1 pip install git+https://github.com/WojciechMula/pyahocorasick.git \
-训练条件：租用单卡4090一周 \
-数据集：悟道200G公开数据集，去重筛选得到60G \
-分词器：借鉴于[bytepiece](https://spaces.ac.cn/archives/9752)，基于AC自动机与最大概率路径算法 \
+由于分词器借鉴自[bytepiece](https://spaces.ac.cn/archives/9752)，所以依赖ahocorasick库。 \
+在安装时请使用如下命令，否则切分粒度不是字节： \
+AHOCORASICK_BYTES=1 pip install git+https://github.com/WojciechMula/pyahocorasick.git 
+## 以下的内容暂未整理，随便看看
 词表：
 - 从n-gram片段开始，经过12轮全自动迭代得到， 
 - 65544词，包含常用词语，生僻字支持字节拆分， 
@@ -39,7 +48,6 @@ AHOCORASICK_BYTES=1 pip install git+https://github.com/WojciechMula/pyahocorasic
 ```
 相见时难别亦难,只因前世无缘却相聚,培训归来不足依依惜别。岁月如烟,刻画古今对家乡,对故乡的留恋,人世相逢却只能相拥而泣,是难以理解。 往事千山,相映成趣,相诉相随,泪流迭下,失望的无奈开始显露,感情又失败了再退缩,
 ```
-
 训练学习率调整： \
 <img width="590" height="413" alt="image" src="https://github.com/user-attachments/assets/9eacd255-4d2d-4760-996e-99f1e392e355" /> \
 训练时测试（允许暂停训练随时查看效果，此时没有重复惩罚）： \
