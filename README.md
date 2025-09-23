@@ -23,6 +23,44 @@
 由于分词器借鉴自[bytepiece](https://spaces.ac.cn/archives/9752)，所以依赖ahocorasick库。 \
 在安装时请使用如下命令，否则切分粒度不是字节： \
 AHOCORASICK_BYTES=1 pip install git+https://github.com/WojciechMula/pyahocorasick.git 
+## 训练时模型参数设置
+通用参数： \
+vocab_size = 65544 + 1 + 255 \
+embedding_dim = 768 \
+key_dim = 128 \
+head_number = 12 \
+feed_forward_dim = 1536 \
+deep = 12 \
+enable_talking_head = True \
+enable_layer_norm = True \
+dropout_rate = 0.1 \
+特殊参数： \
+position_information_type = "mask" (可选"sinusoidal","rotary","learned") \
+enable_affine = True (预实验中可以显著加速收敛，收敛速度块5倍以上，甚至能完成原本无法解决的任务) \
+self_sttention_block_size = 0 (不通过分块的方式节省资源) 
+## 预实验
+预实验是在更古老的代码上进行的，当时为编码解码结构。 \
+这一部分用于说明一些奇怪设置的由来，会在近期补充。 \
+copy任务：正确性验证 \
+add任务：相邻数字相加，用于验证模型相对位置信息的捕捉能力 \
+reverse任务：输入序列反向输出，用于验证模型全局位置信息捕捉能力 \
+实验结果，在position_information_type = "mask" 的条件下，模型能够轻松解决add和reverse任务 \
+只需要16，32，64，三个序列长度上进行训练，模型就能够**准确**将128甚至更长的序列反向， 具有非常良好的长度外推能力 \
+但如果添加一个标记，让模型同时学习add和reverse任务，测试时根据标记切换，则reverse任务难以完成，说明方案具有一定的局限性 \
+enable_affine = True 可以在预实验中让模型**极其迅速迅速的收敛** \
+经过测试，enable_affine = True的ViT模型在Cifar10上的loss会低于正常模型 \
+实验是对这些特性可扩展能力的测试，从结果上看，部分特性是有效的 \
+在线体验中的是未经过微调的base模型，不会遵循指令，但具有基本的上下文捕捉能力，有进行指令微调的潜力 \
+上下文捕捉测试参数设置： \
+Repeat Penalty Decay Rate = **1.0** \
+Repeat Penalty = **0.0** \
+Temperature = 0.0001 \
+上下文捕捉测试问题示例：\
+**A = pzjendglaomwftqfduau785e39，这里添加一些扰动信息，今天天气真好，万里无云，乌云密布。你是一个语言模型。扰动信息结束，A =**\
+就能看到模型准确的输出A对应的字符串。 
+<img width="1482" height="349" alt="image" src="https://github.com/user-attachments/assets/4198a347-44bb-46da-a2c3-8aceff33b6ff" /> \
+
+
 ## 以下的内容暂未整理，随便看看
 词表：
 - 从n-gram片段开始，经过12轮全自动迭代得到， 
