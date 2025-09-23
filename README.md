@@ -50,15 +50,15 @@ reverse任务：输入序列反向输出，用于验证模型全局位置信息�
 enable_affine = True 可以在预实验中让模型**极其迅速迅速的收敛** \
 经过测试，enable_affine = True的ViT模型在Cifar10上的loss会低于正常模型 \
 实验是对这些特性可扩展能力的测试，从结果上看，部分特性是有效的 \
-在线体验中的是未经过微调的base模型，不会遵循指令，但具有基本的上下文捕捉能力，有进行指令微调的潜力 \
+**在线体验中的是未经过微调的base模型，不会遵循指令，但具有基本的上下文捕捉能力，有进行指令微调的潜力** \
 上下文捕捉测试参数设置： \
 Repeat Penalty Decay Rate = **1.0** \
 Repeat Penalty = **0.0** \
 Temperature = 0.0001 \
 上下文捕捉测试问题示例：\
 **A = pzjendglaomwftqfduau785e39，这里添加一些扰动信息，今天天气真好，万里无云，乌云密布。你是一个语言模型。扰动信息结束，A =**\
-就能看到模型准确的输出A对应的字符串。 
-<img width="1482" height="349" alt="image" src="https://github.com/user-attachments/assets/4198a347-44bb-46da-a2c3-8aceff33b6ff" /> \
+就能看到模型准确的输出A对应的字符串。 \
+<img width="1482" height="349" alt="image" src="https://github.com/user-attachments/assets/4198a347-44bb-46da-a2c3-8aceff33b6ff" /> 
 
 
 ## 以下的内容暂未整理，随便看看
