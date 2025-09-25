@@ -1,1 +1,4 @@
-指令微调的代码可以复用预训练的代码，找到合适的数据集，加工成纯文本就好（注意添加<|im_start|>这类关键指令的掩码，避免模型学到输出这样的东西）。
+单论对话指令格式"<|im_start|>user 用户的问题<|im_end|><|im_start|>assistant 期望的回答<|im_end|>"
+多轮对话指令格式"<|im_start|>user 用户的问题1<|im_end|><|im_start|>assistant 期望的回答1<|im_end|><|im_start|>user 用户的问题2<|im_end|><|im_start|>assistant 期望的回答2<|im_end|>"
+训练数据要符合{"conversations": [{"role": "user", "content": "用户提问"}, {"role": "assistant", "content": "模型回答"}]}的格式
+微调数据集过大，稍后上传huggingface，暂时可以参考self.jaonl
