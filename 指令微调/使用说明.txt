@@ -1,4 +1,5 @@
 单论对话指令格式"<|im_start|>user 用户的问题<|im_end|><|im_start|>assistant 期望的回答<|im_end|>"
 多轮对话指令格式"<|im_start|>user 用户的问题1<|im_end|><|im_start|>assistant 期望的回答1<|im_end|><|im_start|>user 用户的问题2<|im_end|><|im_start|>assistant 期望的回答2<|im_end|>"
 训练数据要符合{"conversations": [{"role": "user", "content": "用户提问"}, {"role": "assistant", "content": "模型回答"}]}的格式
+微调时，只会计算模型输出部分的loss，无需担心模型学会问题中的噪音。
 微调数据集过大，稍后上传huggingface，暂时可以参考self.jaonl
