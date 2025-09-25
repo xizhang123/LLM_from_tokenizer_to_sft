@@ -1,9 +1,9 @@
 # 生成式语言模型全流程实验
 ## 相关链接
 [清洗后的数据](https://huggingface.co/datasets/mdokl/WuDaoCorpora2.0-RefinedEdition60GTXT) \
-[预训练得到的模型参数](https://huggingface.co/mdokl/Jerry-v0.01-0.18B) \
-[在线体验(modelscope)](https://modelscope.cn/studios/xizhang123/zh_0.18B_LLM) \
-[在线体验(huggingface)](https://huggingface.co/spaces/mdokl/zh_0.18B_LLM) \
+[预训练得到的模型参数,Base版本](https://huggingface.co/mdokl/Jerry-v0.01-0.18B) \
+[在线体验(modelscope,SFT版本)](https://modelscope.cn/studios/xizhang123/zh_0.18B_LLM) \
+[在线体验(huggingface,SFT版本)](https://huggingface.co/spaces/mdokl/zh_0.18B_LLM) \
 每个文件夹中有对应的说明文件，其中有相对更加详细的描述 
 ## 简要介绍
 这是一个完整的LLM项目，从数据清洗和分词器设计开始，直到预训练结束。 \
