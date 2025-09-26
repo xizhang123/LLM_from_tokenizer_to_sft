@@ -6,6 +6,8 @@
 [在线体验(huggingface,SFT版本)](https://huggingface.co/spaces/mdokl/zh_0.18B_LLM) \
 每个文件夹中有对应的说明文件，其中有相对更加详细的描述 
 ## 指令微调版本测试截图
+<img width="1828" height="905" alt="image" src="https://github.com/user-attachments/assets/32e1a70f-ce29-48a3-bcb0-b05af9d1ba03" />
+
 <img width="1506" height="384" alt="e12404928b0ff11bfaf7a71c8e19dd2" src="https://github.com/user-attachments/assets/e046d7c4-2206-46a9-9818-86eb1f115e7c" />
 
 ## 简要介绍
