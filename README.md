@@ -51,9 +51,13 @@ add任务：相邻数字相加，用于验证模型相对位置信息的捕捉�
 reverse任务：输入序列反向输出，用于验证模型全局位置信息捕捉能力 \
 实验结果，在position_information_type = "mask" 的条件下，模型能够轻松解决add和reverse任务 \
 只需要16，32，64，三个序列长度上进行训练，模型就能够**准确**将128甚至更长的序列反向， 具有非常良好的长度外推能力 \
+对于序列反向任务，使用正余弦位置编码、旋转位置编码只在训练过的长度上表现良好，而掩码位置信息几乎在所有长度上都可工作 \
+<img width="551" height="420" alt="image" src="https://github.com/user-attachments/assets/407b4e12-b632-4480-b505-7ea65248ff88" /> \
 但如果添加一个标记，让模型同时学习add和reverse任务，测试时根据标记切换，则reverse任务难以完成，说明方案具有一定的局限性 \
-enable_affine = True 可以在预实验中让模型**极其迅速的收敛** \
-经过测试，enable_affine = True的ViT模型在Cifar10上的loss会低于正常模型 \
+enable_affine = True 可以在预实验中让模型**极其迅速的收敛**，并可能增强模型能力。 \
+经过测试，enable_affine = True的ViT模型在Cifar10上的loss会低于正常模型，测试集准确率更高 \
+<img width="570" height="419" alt="image" src="https://github.com/user-attachments/assets/da572df7-014d-47e7-af7c-442dae392ca1" /> \
+<img width="545" height="410" alt="image" src="https://github.com/user-attachments/assets/6e9c9db6-a737-428f-8c0e-0ae90d1b437a" /> \
 预实验是对这些特性可扩展能力的测试，从结果上看，部分特性是有效的
 ## 预训练loss变化
 使用Muon优化器，但前期配置错误，等价于使用Adam优化器，50000时及时修复，没有再出现过损失尖刺spike。\
