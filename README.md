@@ -59,6 +59,13 @@ enable_affine = True 可以在预实验中让模型**极其迅速的收敛**，�
 <img width="570" height="419" alt="image" src="https://github.com/user-attachments/assets/da572df7-014d-47e7-af7c-442dae392ca1" /> \
 <img width="545" height="410" alt="image" src="https://github.com/user-attachments/assets/6e9c9db6-a737-428f-8c0e-0ae90d1b437a" /> \
 预实验是对这些特性可扩展能力的测试，从结果上看，部分特性是有效的
+## 词表创建与数据清洗
+1、初始化词表，记录所有长度为1～7的片段，可以只近似保留词频在1/1000000的片段，否则初始词表的体积以及处理过程消耗的内存非常巨大。 \
+2、词表迭代，加载初始词表，用最大概率路径算法对整个语料分词，记录出现过的词汇。（这里用AC自动机进行多模匹配，分词速率可以在1Mtokens/s，可以并行加速。） \
+3、不断迭代，直到词表体积稳定。 \
+4、在词表中查找连续的长片段，这些就是广告词，用于清洗广告。 \
+5、手动缩减词表大小，再分词迭代，直到缩减到合适的大小。\
+关于数据清洗的更多细节见[清洗后的数据](https://huggingface.co/datasets/mdokl/WuDaoCorpora2.0-RefinedEdition60GTXT) 
 ## 预训练loss变化
 使用Muon优化器，但前期配置错误，等价于使用Adam优化器，50000时及时修复，没有再出现过损失尖刺spike。\
 训练片段长度不断增加，每次增加都可以看到loss的突然下降，最终片段长度为1024token，大约3000字/样本。\
