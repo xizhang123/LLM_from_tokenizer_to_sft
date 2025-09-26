@@ -48,8 +48,8 @@ self_sttention_block_size = 0 (不通过分块的方式节省资源)
 这一部分用于说明一些奇怪设置的由来，会在近期补充。 \
 copy任务：正确性验证 \
 add任务：相邻数字相加，用于验证模型相对位置信息的捕捉能力 \
-reverse任务：输入序列反向输出，用于验证模型全局位置信息捕捉能力 \
-实验结果，在position_information_type = "mask" 的条件下，模型能够轻松解决add和reverse任务 \
+inv任务：输入序列反向输出，用于验证模型全局位置信息捕捉能力 \
+实验结果，在position_information_type = "mask" 的条件下，模型能够轻松解决add和inv任务 \
 只需要16，32，64，三个序列长度上进行训练，模型就能够**准确**将128甚至更长的序列反向， 具有非常良好的长度外推能力 \
 对于序列反向任务，使用正余弦位置编码、旋转位置编码只在训练过的长度上表现良好，而掩码位置信息几乎在所有长度上都可工作 \
 <img width="551" height="420" alt="image" src="https://github.com/user-attachments/assets/407b4e12-b632-4480-b505-7ea65248ff88" /> \
