@@ -6,10 +6,16 @@
 [在线体验(huggingface,SFT版本)](https://huggingface.co/spaces/mdokl/zh_0.18B_LLM) \
 每个文件夹中有对应的说明文件，其中有相对更加详细的描述 \
 [预实验任务升级版测试(modelscope,add_task)](https://modelscope.cn/studios/xizhang123/add_task_test/)
-## 指令微调版本测试截图
+## 指令微调版本测试截图（旧版）
 <img width="1828" height="905" alt="image" src="https://github.com/user-attachments/assets/32e1a70f-ce29-48a3-bcb0-b05af9d1ba03" />
 
 <img width="1506" height="384" alt="e12404928b0ff11bfaf7a71c8e19dd2" src="https://github.com/user-attachments/assets/e046d7c4-2206-46a9-9818-86eb1f115e7c" />
+
+## 预实验测试截图
+<img width="1515" height="744" alt="image" src="https://github.com/user-attachments/assets/ae980dd7-0e70-415f-a561-19b1b908e26c" />
+
+<img width="1538" height="669" alt="image" src="https://github.com/user-attachments/assets/90af8c67-3d25-458b-bb44-ada8803cb236" />
+
 
 ## 简要介绍
 这是一个完整的LLM项目，从数据清洗和分词器设计开始，直到指令微调结束。 \
