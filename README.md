@@ -5,7 +5,7 @@
 [在线体验(modelscope,SFT版本,多轮对话)](https://modelscope.cn/studios/xizhang123/zh_0.18B_LLM) \
 [在线体验(huggingface,SFT版本,多轮对话)](https://huggingface.co/spaces/mdokl/zh_0.18B_LLM) \
 每个文件夹中有对应的说明文件，其中有相对更加详细的描述 \
-[预实验任务升级版测试(modelscope,add_task,要每次清空,不支持自然语言,尽量只输入数字、"+"、空格、"="，其余token没训练！)](https://modelscope.cn/studios/xizhang123/add_task_test/)
+[预实验任务测试(modelscope,大整数加法,要每次清空,不支持自然语言,尽量只输入数字、"+"、空格、"="，其余token没训练！)](https://modelscope.cn/studios/xizhang123/add_task_test/)
 ## 指令微调版本测试截图（旧版）
 <img width="1828" height="905" alt="image" src="https://github.com/user-attachments/assets/32e1a70f-ce29-48a3-bcb0-b05af9d1ba03" />
 
