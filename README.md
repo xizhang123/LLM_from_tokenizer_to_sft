@@ -2,10 +2,10 @@
 ## 相关链接
 [清洗后的数据](https://huggingface.co/datasets/mdokl/WuDaoCorpora2.0-RefinedEdition60GTXT) \
 [预训练得到的模型参数,Base版本](https://huggingface.co/mdokl/Jerry-v0.01-0.18B) \
-[在线体验(modelscope,SFT版本)](https://modelscope.cn/studios/xizhang123/zh_0.18B_LLM) \
-[在线体验(huggingface,SFT版本)](https://huggingface.co/spaces/mdokl/zh_0.18B_LLM) \
+[在线体验(modelscope,SFT版本,多轮对话)](https://modelscope.cn/studios/xizhang123/zh_0.18B_LLM) \
+[在线体验(huggingface,SFT版本,多轮对话)](https://huggingface.co/spaces/mdokl/zh_0.18B_LLM) \
 每个文件夹中有对应的说明文件，其中有相对更加详细的描述 \
-[预实验任务升级版测试(modelscope,add_task)](https://modelscope.cn/studios/xizhang123/add_task_test/)
+[预实验任务升级版测试(modelscope,add_task,要每次清空,不支持自然语言,尽量只输入数字、"+"、空格、"="，其余token没训练！)](https://modelscope.cn/studios/xizhang123/add_task_test/)
 ## 指令微调版本测试截图（旧版）
 <img width="1828" height="905" alt="image" src="https://github.com/user-attachments/assets/32e1a70f-ce29-48a3-bcb0-b05af9d1ba03" />
 
