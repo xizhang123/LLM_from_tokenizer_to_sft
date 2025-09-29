@@ -4,7 +4,8 @@
 [预训练得到的模型参数,Base版本](https://huggingface.co/mdokl/Jerry-v0.01-0.18B) \
 [在线体验(modelscope,SFT版本)](https://modelscope.cn/studios/xizhang123/zh_0.18B_LLM) \
 [在线体验(huggingface,SFT版本)](https://huggingface.co/spaces/mdokl/zh_0.18B_LLM) \
-每个文件夹中有对应的说明文件，其中有相对更加详细的描述 
+每个文件夹中有对应的说明文件，其中有相对更加详细的描述 \
+[预实验任务升级版测试(modelscope,add_task)](https://modelscope.cn/studios/xizhang123/add_task_test/)
 ## 指令微调版本测试截图
 <img width="1828" height="905" alt="image" src="https://github.com/user-attachments/assets/32e1a70f-ce29-48a3-bcb0-b05af9d1ba03" />
 
