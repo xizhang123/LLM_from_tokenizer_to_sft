@@ -10,15 +10,18 @@
 输入格式规定：1、只有连续的阿拉伯数字，“+”，“=”，“ ” ； 2、数字是十进制的；3、两数字之间用"+"连接，允许有空格；4、最后可以没有等号。 \
 任务目的：1、验证模型位置信息的功能是否正确（能否捕捉相对位置与绝对位置）；2、简单验证模型能力（计算是否正确）。 \
 值得注意的是，999999999999+1无法算对，但999999999999+000001可以，说明模型存在遗忘隐式进位的情况，补0进行提示可以改善。
-## 指令微调版本测试截图（旧版）
-<img width="1828" height="905" alt="image" src="https://github.com/user-attachments/assets/32e1a70f-ce29-48a3-bcb0-b05af9d1ba03" />
+## 指令微调版本测试截图
+<img width="1503" height="717" alt="image" src="https://github.com/user-attachments/assets/1aea4e0e-7c6b-49d9-8090-1b5c1de9f0d3" />
 
-<img width="1506" height="384" alt="e12404928b0ff11bfaf7a71c8e19dd2" src="https://github.com/user-attachments/assets/e046d7c4-2206-46a9-9818-86eb1f115e7c" />
+<img width="1502" height="722" alt="image" src="https://github.com/user-attachments/assets/c156138f-5c2a-4de9-949f-339317476fc4" />
+
 
 ## 预实验测试截图
-<img width="1515" height="744" alt="image" src="https://github.com/user-attachments/assets/ae980dd7-0e70-415f-a561-19b1b908e26c" />
+<img width="1563" height="690" alt="image" src="https://github.com/user-attachments/assets/d8d0ba0d-8267-4ea1-b221-183eda815641" />
 
-<img width="1538" height="669" alt="image" src="https://github.com/user-attachments/assets/90af8c67-3d25-458b-bb44-ada8803cb236" />
+<img width="1579" height="711" alt="image" src="https://github.com/user-attachments/assets/99425f8b-b94d-4883-a122-41e67e5c3205" />
+
+<img width="1502" height="738" alt="image" src="https://github.com/user-attachments/assets/e432666a-b1e6-4eeb-843b-6927dc3c930b" />
 
 
 ## 简要介绍
